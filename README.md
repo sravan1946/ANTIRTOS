@@ -2,7 +2,7 @@
 
 
 # ANTIRTOS 
-### *No any RTOS needed, you will see...*
+### *No RTOS need, you will see...*
 ANTIRTOS is an ultra-lightweight, universal C++ library designed for task management in IoT and embedded applications. It is coded in a single, small file, making it incredibly easy to integrate into your projects. ANTIRTOS aims to deliver a robust, secure, and efficient library for task management. With its focus on modularity and scalability, ANTIRTOS is suitable for a variety of devices, from simple microcontrollers to complex embedded systems.
 It is developed especially for embedded systems where the complexity and overhead of an RTOS are not justified.
 
@@ -28,7 +28,7 @@ Allow your MCU to perform many tasks while using a very small amount of microcon
 fQ F1(4); // first queue is 4 elements(function pointers) long
 fQ F2(4); // second queue is 4 elements(function pointers) long
 fQ F3(8); // third queue is 8 elements(function pointers) long
-fQP<int32_t> F4(3); // third queue is 3 elements(function pointers)
+fQP<int32_t> F4(3); // fourth queue is 3 elements(function pointers)
 		    // functions are receiving int32_t argument
 ```
 
@@ -154,6 +154,14 @@ put where you want (here example of 2 functions put into queue):
   ```cpp
 	F6.tick(); // execute for 'ticks' in timer so the queue class instance will know then to initiate execution
   ```
+
+  ### Revocation function from conveyers
+  You may easily revoke your tasks from delayed functional queues like following:
+   ```cpp
+  F5.revoke(yourTask); // revoke function (all of the same if there are several of them) from the F5 queue
+  ```
+Kindly find an example of usage revocation on [Wokwi](https://wokwi.com/projects/411101121732784129)!
+
 That's it. Enjoy! 
  
 
